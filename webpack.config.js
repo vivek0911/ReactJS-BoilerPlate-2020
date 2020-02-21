@@ -18,14 +18,16 @@ module.exports = {
           loader: "babel-loader"
         }
       },
-      // {
-      //   test: /\.css/,
-      //   loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?minimize=true' }),
-      // },
-      // {
-      //   test: /\.scss/,
-      //   loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?minimize=true!sass-loader' }),
-      // },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
+      },
       {
         test: /\.(svg|png|jpg|jpeg|woff|woff2|ttf|eot|ico)$/,
         loader: 'url-loader',
