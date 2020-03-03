@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './global.css';
-import './index.scss';
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { browserHistory } from 'react-router';
+// import { syncHistoryWithStore } from 'react-router-redux';
+import store from "./store";
+import App from './components/app';
 
-const HelloWorld = () => (
-  <div className="center wrapper">
-    <h1>Welcome to React App 2020</h1>
-    <p>ReactJs boilerplate 2020 containing webpack 4 configuration and sass</p>
-  </div>
-)
+const globalStore = store({});
+
+// Create an enhanced history that syncs navigation events with the store
+// const history = syncHistoryWithStore(browserHistory, globalStore)
+
+
 ReactDOM.render(
-  <HelloWorld />,
-  document.getElementById('app')
+  <Provider store={globalStore}>
+    <Router>
+      <Route path="/" component={App}>
+      </Route>
+    </Router>
+  </Provider>,
+  document.getElementById("app")
 );
