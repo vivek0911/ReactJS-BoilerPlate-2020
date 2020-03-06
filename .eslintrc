@@ -15,6 +15,12 @@
     "es6": true
   },
   "plugins": ["react", "prettier"],
+  "globals": {
+    "shallow": false,
+    "mount": false,
+    "render": false,
+    "jest": false
+  },
   "settings": {
     "react": {
       "version": "16.12"
