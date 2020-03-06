@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { updateUser } from '../actions/syncAction';
 
 class App extends Component {
@@ -16,6 +17,10 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  updateUser: PropTypes.func,
+};
 
 const select = store => store;
 

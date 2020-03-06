@@ -1,4 +1,1 @@
-export const updateUser = name => ({
-  type: 'DEMO_ACTION',
-  payload: name,
-});
+export const updateUser = name => ({ type: 'DEMO_ACTION', payload: name });
