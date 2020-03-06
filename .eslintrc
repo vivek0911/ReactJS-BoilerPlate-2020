@@ -1,0 +1,34 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "extends": [ // "airbnb"
+    "eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "plugins": ["react", "prettier"],
+  "settings": {
+    "react": {
+      "version": "16.12"
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      "off"
+    ],
+    "react/prop-types": [
+      "warn"
+    ]
+  }
+}
+
+// https://medium.com/dubizzletechblog/setting-up-prettier-and-eslint-for-js-and-react-apps-bbc779d29062
+// https://thomlom.dev/setup-eslint-prettier-react/
